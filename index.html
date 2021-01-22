@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>Credit Card</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="./custom.css" />
+   
+    
+  </head>
+  <body>
+    <div class="container">
+      <div style="margin-top: 8vh" class="row">
+        <div class="col-lg-12"><h3>Credit Card input!</h3></div>
+        <div class="col-lg-12"><h5>Credit Card Form.</h5></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-sm-12 col-lg-4">
+          <div class="row card__container">
+            <div style="margin-top: 8vh; font-size: xx-large" class="col-lg-12">
+              <p id="cardnum">. . . . &nbsp;. . . .&nbsp; . . . . &nbsp;. . . .</p>
+            </div>
+            <div style="margin-top: 3vh" class="col-lg-8">
+              <p id="cardname">YOUR  NAME  HERE</p id="cardname">
+            </div>
+            <div style="margin-top: 3vh" class="col-lg-4">
+              <p>valid thru</p>
+              <p id="cardvalid">.. / ..</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+      <div class="row">
+        <form id="cardform" onsubmit="event.preventDefault();handlesubmit()" style="margin-top: 3vh">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <div id="inputCardNumGroup" class=" input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputCardNum4"
+                  placeholder="Card Number"
+                  maxlength="19"
+                  onkeyup="handlecardnumber(this)"
+                  required
+                />
+                <div class="input-group-append">
+                  <span
+                    style="background-color: #fff"
+                    class="input-group-text"
+                    id="inputGroupPrepend"
+                    ><img style="width: 24px" src="./icon/credit-card.svg"
+                  /></span>
+                </div>
+              </div>
+              <div class="invalid-feedback">
+                Please 16 digit Card Number.
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <input
+                type="text"
+                class="form-control"
+                id="inputName4"
+                placeholder="Name"
+                onkeyup="document.getElementById('cardname').innerText=this.value;if(this.value=='') document.getElementById('cardname').innerText='YOUR  NAME  HERE'"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                id="inputValidThru4"
+                placeholder="Valid Thru"
+                maxlength="5"                
+                onkeyup="handleCardname()"
+                required
+              />
+              <div class="invalid-feedback">
+                Please Validity Date in mm/yy format.
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <input
+                type="password"
+                class="form-control"
+                id="inputCvc4"
+                placeholder="CVC"
+                maxlength="3"
+                onkeyup="this.value=this.value.replace(/[^\d]/g,'')"
+                required
+              />
+              <div class="invalid-feedback">
+                Please 3 digit CVC Number.
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <button style="width: 100%" type="submit" class="btn btn-primary">
+                PAY
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script
+       src="./custom.js"
+    ></script>
+  </body>
+</html>

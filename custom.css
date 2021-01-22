@@ -1,0 +1,10 @@
+.row {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card__container {
+  border-radius: 20px;
+  background-color: #808080b0;
+  color: aliceblue;
+}
